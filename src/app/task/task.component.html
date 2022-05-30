@@ -1,0 +1,695 @@
+
+
+  <div class="btm-bar" style="background-color: #162c55; height: 30px;">
+    <h1 style="margin-left: 10px; color: white;">Dashboard</h1>
+    <!-- <small style="color: blue; margin-left:10px;"><span
+      class="vl" style="border-left: 2px solid blue;"></span><span
+      style="margin-left: 10px; font-size: medium;">Orders</span></small> -->
+  </div>
+
+  <!--body content-->
+  <ng-container *ngIf="startComponent">
+    <mat-card>
+      <mat-accordion class="example-headers-align">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false" hideToggle style="margin-top: 10px;">
+          <mat-expansion-panel-header style="background-color: #162c55;">
+            <mat-panel-title style="color: white;">
+              General Info
+            </mat-panel-title>
+            <mat-panel-description style="margin-left: 1300px;">
+              <mat-icon style="color: white;">
+                arrow_forward_ios
+              </mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          
+          <mat-card>
+            <img src="../../assets/images/info1.png" alt="info" style="width: 30px; background-color: #e1dada; border-radius: 40px; height: 30px;">
+            <h2 style="margin-left: 10px; color: #52bfeb;">General Info</h2>
+          <p style="margin-left: 40px; background-color: rgb(223, 223, 223); border-radius: 30px; height: 25px; width: 30px; margin-top: 5px;"><mat-icon style="margin-left: 3px; color: white;">description</mat-icon></p>
+          <h2 style="margin-left: 10px;">Order Financials</h2>
+          <div class="btn-top" style="margin-left: 50%;">
+            <button style="background-color: #52bfeb; border-radius: 20px; border: none; width: 70px; height: 30px; color: white;">Reset</button>
+            <button style="background-color: #52bfeb; border-radius: 20px; border: none;  width: 70px; height: 30px; color: white; margin-left: 3px;">Cancel</button>
+            <button style="background-color: #52bfeb; border-radius: 20px; border: none;  width: 70px; height: 30px; color: white; margin-left: 3px;">Save</button>
+          </div>
+        </mat-card>
+        <div style="background-color: #52bfeb; display: flex;">
+          <h1 style="color: white; margin-left: 10px;">General Info</h1>
+          <mat-icon style="margin-left: 1320px; margin-top: 10px; color: white;">keyboard_arrow_right</mat-icon>
+        </div>
+        <mat-card>
+          <div class="range">
+            <div class="grid-container">
+              <div class="inp-1" style="display: grid;">
+                <label>Booking ID:</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Product:</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" >
+                <form class="custom" style="display: grid;">
+                  <label>Order Status:</label>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Pending</mat-label>
+                    <mat-select>
+                      <mat-option>Option 1</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </form>
+              </div>
+              <div class="inp-1">
+                <form class="custom" style="display: grid;">
+                  <label>Company Code:</label>
+                  <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="INKN">
+                    <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                      <mat-button-toggle value="green" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">content_paste_search</mat-icon></mat-button-toggle>
+                      <mat-button-toggle value="green" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">description</mat-icon></mat-button-toggle>
+                      <mat-button-toggle value="red" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">search</mat-icon></mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </mat-form-field>
+                </form>
+               
+              </div>
+            </div>
+            <div class="grid-container">
+              <div class="inp-1" style="display: grid;">
+                <label>External Order ID:</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Delivey Terms:</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Services:</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" >
+                <form class="custom" style="display: grid;">
+                  <label>Branch Code:</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text" placeholder="INDEL">
+                  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                    <mat-button-toggle value="green" style="background-color:#efeef0;"><mat-icon style="margin-bottom: 15px;">content_paste_search</mat-icon></mat-button-toggle>
+                    <mat-button-toggle value="green" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">description</mat-icon></mat-button-toggle>
+                    <mat-button-toggle value="red" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">search</mat-icon></mat-button-toggle>
+                  </mat-button-toggle-group>
+                </mat-form-field>
+                </form>
+                
+              </div>
+            </div>
+            <div class="grid-container">
+              <div class="inp-1" style="display: grid;">
+                <label>Inco Terms:</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>order Type:</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Mode Of Transport:</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Department Code:</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="grid-container">
+              <div class="inp-1" style="display: grid;">
+                  <label>Customer ID:</label>
+                <mat-form-field class="form" appearance="outline">
+                  <input matInput type="text">
+                  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                    <mat-button-toggle value="red" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">search</mat-icon></mat-button-toggle>
+                    <mat-button-toggle value="green" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">description</mat-icon></mat-button-toggle>
+                  </mat-button-toggle-group>
+                  
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>#Cust-Do :</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label># Custref-Po:</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Goods Value:</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                  <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="grid-container">
+              <div class="inp-1" style="display: grid;">
+                <label>Orginal Document Sent:</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                  <mat-icon matSuffix>calendar_today</mat-icon>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Orginal Document Recieved:</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                  <mat-icon matSuffix>calendar_today</mat-icon>
+                </mat-form-field>
+              </div>
+              </div>
+              <div class="grid-container">
+                <div class="inp-1" style="display: grid;">
+                  <label>Driver pickup instruction:</label>
+                  <textarea></textarea>
+                </div>
+                <div class="inp-1" style="display: grid;">
+                  <label>Driver Deliver Instruction:</label>
+                  <textarea></textarea>
+                </div>
+                </div>
+          </div>
+        </mat-card>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false" hideToggle style="margin-top: 10px;" >
+          <mat-expansion-panel-header style="background-color: #162c55;" >
+            <mat-panel-title style="color: white;">
+              Routing Info
+            </mat-panel-title>
+            <mat-panel-description style="margin-left: 1300px;">
+              <mat-icon style="color: white;">
+                arrow_forward_ios
+              </mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        <div class="card-data">
+          <mat-card>
+            <span style="position: absolute; left: 500px">
+              <mat-radio-button style="color: #162c55;">Save to Party Master</mat-radio-button>
+            </span>
+           
+            <div class="shipper" style="margin-top: 60px;">
+              <div class="inp-1" style="display: grid;">
+                <label>Shipper ID:</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                    <mat-button-toggle value="red" style="background-color: #efeef0;">
+                      <mat-icon style="margin-bottom: 15px;">search</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="green" style="background-color: #efeef0;">
+                      <mat-icon style="margin-bottom: 15px;">description</mat-icon>
+                    </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Shipper Name*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Shipper ID:</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                    <mat-button-toggle value="red" style="background-color: #efeef0;">
+                      <mat-icon style="margin-bottom: 15px;">calendar_today</mat-icon>
+                    </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Street</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>City</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Estimated Late Pickup*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                    <mat-button-toggle value="red" style="background-color: #efeef0;">
+                      <mat-icon style="margin-bottom: 15px;">calendar_today</mat-icon>
+                    </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Province*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Country*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Zipcode*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>phone*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Fax</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Email</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card>
+            <span style="position: absolute; left: 500px">
+              <mat-radio-button style="color: #162c55;">Save to Party Master</mat-radio-button>
+            </span>
+            <div class="shipper" style="margin-top: 60px;">
+              <div class="inp-1" style="display: grid;">
+                <label>Consignee ID*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                    <mat-button-toggle value="red" style="background-color: #efeef0;">
+                      <mat-icon style="margin-bottom: 15px;">search</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="green" style="background-color: #efeef0;">
+                      <mat-icon style="margin-bottom: 15px;">description</mat-icon>
+                    </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Consignee Name*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Estimated Early delivery:</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                    <mat-button-toggle value="red" style="background-color: #efeef0;">
+                      <mat-icon style="margin-bottom: 15px;">calendar_today</mat-icon>
+                    </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Street</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>City</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Estimated Late Delivery*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                    <mat-button-toggle value="red" style="background-color: #efeef0;">
+                      <mat-icon style="margin-bottom: 15px;">calendar_today</mat-icon>
+                    </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Province*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Country*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Zipcode*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>phone*</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Fax</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Email</label>
+                <mat-form-field class="form" appearance="outline" style="width: 220px;">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+        
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false" hideToggle style="margin-top: 10px;">
+          <mat-expansion-panel-header style="background-color: #162c55;">
+            <mat-panel-title style="color: white;">
+              Cargo details
+            </mat-panel-title>
+            <mat-panel-description style="margin-left: 1300px;">
+              <mat-icon style="color: white;">
+                arrow_forward_ios
+              </mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-card style="height:20px">
+            <mat-icon>arrow_drop_up</mat-icon>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px;"></mat-divider>
+            <span class="material-icons" style="margin-left: 10px; margin-top: 5px;">local_shipping</span>
+            <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Package Type</h2>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+            <mat-icon style="margin-left: 10px; margin-top: 5px;">shopping_cart</mat-icon>
+            <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Goods Description</h2>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+            <mat-icon style="margin-left: 10px; margin-top: 5px;">request_quote</mat-icon>
+            <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Marks and Numbers</h2>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+            <mat-icon style="margin-left: 10px; margin-top: 5px;">request_quote</mat-icon>
+            <h2 style="color: rgb(89, 89, 130);">Quantity</h2>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+            <mat-icon style="margin-left: 10px; margin-top: 5px;">request_quote</mat-icon>
+            <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Item ID</h2>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+            <mat-icon style="margin-left: 10px; margin-top: 5px;">request_quote</mat-icon>
+            <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Scanned Quantity</h2>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+            <mat-icon style="margin-left: 10px; margin-top: 5px;">height</mat-icon>
+            <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Length</h2>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+            <mat-icon style="margin-left: 10px; margin-top: 5px;">height</mat-icon>
+            <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">width</h2>
+            <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+          </mat-card>
+          <div style="background-color: gray;">
+            <mat-icon style="margin-left: 70px;">tune</mat-icon>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+  </ng-container>
+  
+  
+  
+
+<!--Body Content-->
+<ng-container *ngIf="newComponent">
+  <mat-card>
+    <div class="top-bar" style="display: flex;">
+      <div>
+        <mat-form-field appearance="outline" style="width: 150px">
+          <mat-label>From Date</mat-label>
+          <input matInput placeholder="From Date">
+          <mat-icon matSuffix>calendar_today</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline"  style="width: 150px">
+          <mat-label>To Date</mat-label>
+          <input matInput placeholder="From Date">
+          <mat-icon matSuffix>calendar_today</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline"  style="width: 150px">
+          <mat-label>Search with %</mat-label>
+          <input matInput placeholder="From Date">
+        </mat-form-field>
+        <mat-form-field appearance="outline"  style="width: 150px">
+          <mat-label>select</mat-label>
+          <input matInput placeholder="From Date">
+          <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button
+          style="margin-left: 10px;  margin-top: 10px; border-radius: 50px; background-color: aqua; height: 35px; color: white;">search</button>  
+      </div>
+  
+      <div class="left-icons" style="margin-left: 490px; margin-top: 15px;">
+        <ul class="navbar-nav mr-auto" style="list-style: none; display: flex;">
+          <li
+            class="nav-item"
+            routerLinkActive="active"
+            (mouseover)="createPlanmenuTrigger.openMenu()"
+            (mouseout)="$event.stopPropagation(); createPlanmenuTrigger.openMenu()"
+          >
+            <a
+              class="nav-link"
+              #createPlanmenuTrigger="matMenuTrigger"
+              [matMenuTriggerFor]="createPlan"
+              ><mat-icon>content_paste_search</mat-icon></a
+            >
+            <mat-menu #createPlan="matMenu">
+              <button mat-menu-item (click)="addNew()"><mat-icon>add</mat-icon>New</button>
+              <button mat-menu-item>Order</button>
+              <button mat-menu-item>Pending Plans</button>
+            </mat-menu>
+            
+          </li>
+          <mat-divider vertical style="height: 25px; margin-left: 5px;"></mat-divider>
+          <li
+            class="nav-item"
+            routerLinkActive="active"
+            (mouseover)="dispatchPlanmenuTrigger.openMenu()"
+            style="margin-left: 10px;"
+          >
+            <a
+              class="nav-link"
+              #dispatchPlanmenuTrigger="matMenuTrigger"
+              [matMenuTriggerFor]="dispatchPlan"
+              ><mat-icon>dashboard</mat-icon></a
+            >
+            <mat-menu #dispatchPlan="matMenu">
+              <button mat-menu-item>
+                View Plans
+              </button>
+              <button mat-menu-item>
+                Modify Plans
+              </button>
+              <button mat-menu-item>
+                Approve Plans
+              </button>
+            </mat-menu>
+          </li>
+            <mat-divider vertical style="height: 25px; margin-left: 5px;"></mat-divider>
+          <li
+            class="nav-item"
+            routerLinkActive="active"
+            (mouseover)="dispatchPlanmenuTrigger.openMenu()"
+            style="margin-left: 10px;"
+          >
+            <a
+              class="nav-link"
+              #dispatchPlanmenuTrigger="matMenuTrigger"
+              [matMenuTriggerFor]="dispatchPlan"
+              ><mat-icon>chrome_reader_mode</mat-icon></a
+            >
+            <mat-menu #dispatchPlan="matMenu">
+              <button mat-menu-item>
+                View Plans
+              </button>
+              <button mat-menu-item>
+                Modify Plans
+              </button>
+              <button mat-menu-item>
+                Approve Plans
+              </button>
+            </mat-menu>
+          </li>
+          <mat-divider vertical style="height: 25px; margin-left: 5px;"></mat-divider>
+          <li
+          class="nav-item"
+          routerLinkActive="active"
+          (mouseover)="dispatchPlanmenuTrigger.openMenu()"
+          style="margin-left: 10px;"
+        >
+          <a
+            class="nav-link"
+            #dispatchPlanmenuTrigger="matMenuTrigger"
+            [matMenuTriggerFor]="dispatchPlan"
+            ><mat-icon>launch</mat-icon></a
+          >
+          <mat-menu #dispatchPlan="matMenu">
+            <button mat-menu-item>
+              View Plans
+            </button>
+            <button mat-menu-item>
+              Modify Plans
+            </button>
+            <button mat-menu-item>
+              Approve Plans
+            </button>
+          </mat-menu>
+        </li>
+        </ul>
+      </div>
+    </div>
+   
+  </mat-card>
+
+  <div class="body-content">
+    <mat-card>
+      <select name="select" id="option" style="margin-left: 90%;">
+        <option value="10">10</option>
+      </select>
+      <mat-icon style="margin-left: 10px; background-color: #d4cccc; border-radius: 20px;">keyboard_arrow_left
+      </mat-icon>
+      <mat-icon style="background-color: #d4cccc; border-radius: 20px; margin-left: 5px;">keyboard_arrow_right
+      </mat-icon>
+    </mat-card>
+
+
+  </div>
+ <mat-card>
+  <!-- <input type="checkbox" style="margin-top:3px; width: 20px; height: 15px;">
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px;"></mat-divider>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 30px;"></mat-divider>
+  <h2 style="color: rgb(89, 89, 130); margin-left: 10px;">S.No</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+  <span class="material-icons" style="margin-left: 10px; margin-top: 5px;">local_shipping</span>
+  <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">BookingId</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+  <mat-icon style="margin-left: 10px; margin-top: 5px;">edit_note</mat-icon>
+  <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Deliverynote</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+  <mat-icon style="margin-left: 10px; margin-top: 5px;"> contact_mail</mat-icon>
+  <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Booking</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+  <mat-icon style="margin-left: 10px; margin-top: 5px;"> border_color</mat-icon>
+  <h2 style="color: rgb(89, 89, 130);">Salog</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+  <mat-icon style="margin-left: 10px; margin-top: 5px;">people</mat-icon>
+  <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Customer</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+  <mat-icon style="margin-left: 10px; margin-top: 5px;"> person</mat-icon>
+  <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">Name</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+  <mat-icon style="margin-left: 10px; margin-top: 5px;">settings_phone</mat-icon>
+  <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">phone</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider>
+  <mat-icon style="margin-left: 10px; margin-top: 5px;">settings</mat-icon>
+  <h2 style="color: rgb(89, 89, 130); margin-left: 5px;">settings</h2>
+  <mat-icon style="margin-top: 5px;">unfold_more</mat-icon>
+  <mat-divider vertical style="height: 30px; margin-bottom: 3px; margin-left: 10px;"></mat-divider> -->
+    <div style="background-color: #e9e5f3; width: 35px; border-radius: 60px; height: 30px;">
+      <mat-icon style="margin-left: 5px; margin-top: 5px;">local_shipping</mat-icon>
+    </div>
+    <div style="display: flex; margin-left: 1050px;">
+      <div class="icon">
+        <mat-icon style="margin-left: 5px;" matTooltip="visible" matTooltipPosition="above">visibility</mat-icon>
+      </div>
+      <div  class="icon" style=" margin-left: 20px;">
+        <mat-icon style="margin-left: 5px; margin-top: 2px;" matTooltip="shipping" matTooltipPosition="above">local_shipping</mat-icon>
+      </div>
+      <div class="icon" style=" margin-left: 20px;">
+        <mat-icon style="margin-left: 5px;" matTooltip="location" matTooltipPosition="above">location_on</mat-icon>
+      </div>
+      <div class="icon" style=" margin-left: 20px;">
+        <mat-icon style="margin-left: 5px;" matTooltip="description" matTooltipPosition="above">description</mat-icon>
+      </div>
+      <div  class="icon" style=" margin-left: 20px;">
+        <mat-icon style="margin-left: 5px;" matTooltip="pdf" matTooltipPosition="above" matTooltipClass="position.value">receipt_long</mat-icon>
+      </div>
+      <div class="icon" style=" margin-left: 20px;">
+        <mat-icon style="margin-left: 5px;" matTooltip="list" matTooltipPosition="above">list_alt</mat-icon>
+      </div>
+    </div>
+    
+</mat-card>
+</ng-container>
+<router-outlet></router-outlet>

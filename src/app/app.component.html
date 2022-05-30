@@ -1,0 +1,125 @@
+<!-- <mat-toolbar>
+    <span class="spacer"></span>
+    <img src="../../assets/images/title.jpeg" alt="companylogo">
+    <div class="dropdown" style="display: flex; justify-content: space-evenly;">
+      <ul class="navbar-nav mr-auto" style="list-style: none; display: flex;">
+        <li
+          class="nav-item"
+          routerLinkActive="active"
+          (mouseover)="createPlanmenuTrigger.openMenu()"
+          (mouseout)="$event.stopPropagation(); createPlanmenuTrigger.openMenu()"
+        >
+          <a
+            class="nav-link"
+            #createPlanmenuTrigger="matMenuTrigger"
+            [matMenuTriggerFor]="createPlan"
+            ><mat-icon style="margin-left: 30px;">dashboard</mat-icon></a
+          >
+          <br>
+          <span>Dashboard</span>
+          <mat-menu #createPlan="matMenu">
+            <button mat-menu-item style="background-color: #eceaf9;" routerLink="/driver"><mat-icon>add</mat-icon>driver</button>
+            <button mat-menu-item style="background-color: #eceaf9;" routerLink="/vehicle"><mat-icon>add</mat-icon>Vehicle</button>
+          </mat-menu>
+          
+        </li>
+        <mat-divider vertical style="height: 60px; margin-left: 15px;"></mat-divider>
+        <li
+          class="nav-item"
+          routerLinkActive="active"
+          (mouseover)="dispatchPlanmenuTrigger.openMenu()"
+          style="margin-left: 10px;"
+        >
+          <a
+            class="nav-link"
+            #dispatchPlanmenuTrigger="matMenuTrigger"
+            [matMenuTriggerFor]="dispatchPlan"
+            ><mat-icon style="margin-left: 30px;">book_online</mat-icon></a
+          >
+          <br>
+          <span>Booking</span>
+          <mat-menu #dispatchPlan="matMenu">
+            <button mat-menu-item style="background-color: #eceaf9;">
+              View Plans
+            </button>
+            <button mat-menu-item style="background-color: #eceaf9;">
+              Modify Plans
+            </button>
+            <button mat-menu-item style="background-color: #eceaf9;">
+              Approve Plans
+            </button>
+          </mat-menu>
+        </li>
+        <mat-divider vertical style="height: 60px; margin-left: 15px;"></mat-divider>
+        <li
+        class="nav-item"
+        routerLinkActive="active"
+        (mouseover)="dispatchPlanmenuTrigger.openMenu()"
+        style="margin-left: 10px;"
+      >
+        <a
+          class="nav-link"
+          #dispatchPlanmenuTrigger="matMenuTrigger"
+          [matMenuTriggerFor]="dispatchPlan"
+          ><mat-icon>list_alt</mat-icon></a
+        >
+        <br>
+        <span>Trip</span>
+        <mat-menu #dispatchPlan="matMenu" style="display: flex; justify-content: space-between;">
+          <button mat-menu-item style="background-color: #eceaf9;">
+            View Plans
+          </button>
+          <button mat-menu-item style="background-color: #eceaf9;">
+            Modify Plans
+          </button>
+          <button mat-menu-item style="background-color: #eceaf9;">
+            Approve Plans
+          </button>
+        </mat-menu>
+      </li>
+      <mat-divider vertical style="height: 60px; margin-left: 15px;"></mat-divider>
+      <li
+      class="nav-item"
+      routerLinkActive="active"
+      (mouseover)="dispatchPlanmenuTrigger.openMenu()"
+      style="margin-left: 10px;"
+    >
+      <a
+        class="nav-link"
+        #dispatchPlanmenuTrigger="matMenuTrigger"
+        [matMenuTriggerFor]="dispatchPlan"
+        ><mat-icon style="margin-left: 20px;">article</mat-icon></a
+      >
+      <br>
+      <span>Master</span>
+      <mat-menu #dispatchPlan="matMenu">
+        <button mat-menu-item>
+          Master
+        </button>
+        <button mat-menu-item>
+          Modify Plans
+        </button>
+        <button mat-menu-item>
+          Approve Plans
+        </button>
+      </mat-menu>
+    </li>
+      </ul>
+    </div>
+
+    <span class="example-spacer"></span>
+    <select name="select" id="option">
+      <option value="select your language">select Language</option>
+    </select>
+    <img src="../../assets/images/help.png" alt="help" style="width: 25px; margin-left: 5px;">
+    <img src="../../assets/images/Google_mic.svg.png" alt="google" style="width: 20px; margin-left: 5px;">
+    <mat-divider vertical style="height:40px; margin-left: 10px;"></mat-divider>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar> -->
+
+<!-- <router-outlet></router-outlet> -->
+
+<!-- <app-myscm></app-myscm> -->
+<router-outlet></router-outlet>

@@ -1,0 +1,19 @@
+<mat-grid-list cols="2" rowHeight="100vh">
+    <mat-grid-tile>
+      <img src="../../../assets/images/pexels-photo-11053644.webp" alt="leftside" style="width: 100%; opacity: 0.80;">
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="body-content"  style="margin-left: 30px;" [formGroup]="UserForm">
+        <h2 style="text-align: center;">Welcome Myscm</h2>
+        <mat-form-field appearance="outline" style="width: 90%;">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" type="email" formControlName="user_name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 90%;">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="password" type="password" formControlName="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" style="width: 90%;" (click)="addUser()" routerLink="/dashboard">submit</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>

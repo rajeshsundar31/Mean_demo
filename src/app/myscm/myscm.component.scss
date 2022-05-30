@@ -1,0 +1,142 @@
+.container-navbar{
+    background-color: #343c4b;
+    display: flex;
+}
+img{
+    width: 140px;
+    height: 70px;
+}
+
+.dropdown-btn {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 15px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+
+  mat-form-field{
+    position: absolute;
+    left: 1220px;
+    top: 10px;
+    
+  }
+  ::ng-deep .custom{
+    .mat-form-field-outline{
+        background-color: #efeef0;
+    }  
+  }
+
+  .user-icon{
+      background-color: #466ca2;
+      border-radius: 90px;
+      height: 50px;
+      margin-top: 10px;
+      opacity: 1;
+      margin-left: 540px;
+    }
+
+    .container-btn{
+        background-color: #455b7e;
+        display: flex;
+        .add-btn{
+            margin-left: 20px;
+            background-color: #656f7d;
+            padding: 10px;
+            opacity: 1;
+            border-radius: 7px;
+        }
+        .btn-add{
+          margin-left: 20px;
+            background-color: transparent;
+            padding: 10px;
+            input{
+              margin-top: 7px;
+              background-color: white;
+              border-radius: 30px;
+              height: 30px;
+            }
+        }
+        button{
+            border-radius: 7px;
+            margin-left: 5px;
+            border: none;
+        }
+    }
+
+    table {
+      width: 100%;
+      margin-top: 40px;
+    }
+    th{
+      background-color: #d6dae5;
+    }
+    tr:hover{
+      background-color: whitesmoke;
+    }
+    .map-layout{
+      display: flex;
+    }
+
+    agm-map {
+      height: 600px;
+      width: 1000px;
+    }
+    .card{
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: space-evenly;
+      margin-left: 10px;
+      gap: 10px;
+      width: 700px;
+      height: 150px;
+    }
+    h5{
+      text-align: center;
+    }
+    .back{
+      background: linear-gradient(to right, #c33764, #1d2671) !important;
+      color: white;
+    }
+    .new{
+      background: linear-gradient(to left, #3a7bd5, #3a6073) !important;
+      color: white;
+    }
+    .exisist{
+      background: linear-gradient(to left, #134e5e, #71b280) !important;
+      color: white;
+    }
+    table{
+      border: 1px solid;
+    }
+    .table{
+      margin-left: 67%;
+      display: flex;
+      position: absolute;
+      bottom: 90px;
+    }

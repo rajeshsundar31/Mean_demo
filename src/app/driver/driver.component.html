@@ -1,0 +1,316 @@
+<div class="btm-bar" style="background-color: #162c55; height: 30px;">
+    <h1 style="margin-left: 10px; color: white;">Drivers</h1>
+  </div>
+<ng-container *ngIf="driverInfo">
+    <mat-card>
+        <div class="top-bar" style="display: flex;">
+          <div>
+            <mat-form-field appearance="outline" style="width: 200px">
+              <mat-label>carrier Name</mat-label>
+              <input matInput placeholder="From Date">
+            </mat-form-field>
+            <mat-form-field appearance="outline"  style="width: 200px; margin-left: 10px;">
+              <mat-label>Driver Name</mat-label>
+              <input matInput placeholder="From Date">
+            </mat-form-field>
+            <mat-form-field appearance="outline"  style="width: 200px; margin-left: 10px;">
+              <mat-label>Vehicle ID</mat-label>
+              <input matInput placeholder="From Date">
+            </mat-form-field>
+            <button mat-raised-button
+              style="margin-left: 10px;  margin-top: 10px; border-radius: 50px; background-color: aqua; height: 35px; color: white;">search</button>  
+          </div>
+      
+          <div class="left-icons" style="margin-left: 600px; margin-top: 15px;">
+            <ul class="navbar-nav mr-auto" style="list-style: none; display: flex;">
+              <li
+                class="nav-item"
+                routerLinkActive="active"
+                (mouseover)="createPlanmenuTrigger.openMenu()"
+                (mouseout)="$event.stopPropagation(); createPlanmenuTrigger.openMenu()"
+              >
+                <a
+                  class="nav-link"
+                  #createPlanmenuTrigger="matMenuTrigger"
+                  [matMenuTriggerFor]="createPlan"
+                  ><mat-icon>content_paste_search</mat-icon></a
+                >
+                <mat-menu #createPlan="matMenu">
+                  <button mat-menu-item (click)="add()"><mat-icon>add</mat-icon>Driver</button>
+                </mat-menu>
+                
+              </li>
+              <mat-divider vertical style="height: 25px; margin-left: 5px;"></mat-divider>
+              <li
+                class="nav-item"
+                routerLinkActive="active"
+                (mouseover)="dispatchPlanmenuTrigger.openMenu()"
+                style="margin-left: 10px;"
+              >
+                <a
+                  class="nav-link"
+                  #dispatchPlanmenuTrigger="matMenuTrigger"
+                  [matMenuTriggerFor]="dispatchPlan"
+                  ><mat-icon>dashboard</mat-icon></a
+                >
+                <mat-menu #dispatchPlan="matMenu">
+                  <button mat-menu-item>
+                    View Plans
+                  </button>
+                  <button mat-menu-item>
+                    Modify Plans
+                  </button>
+                  <button mat-menu-item>
+                    Approve Plans
+                  </button>
+                </mat-menu>
+              </li>
+              <mat-divider vertical style="height: 25px; margin-left: 5px;"></mat-divider>
+              <li
+              class="nav-item"
+              routerLinkActive="active"
+              (mouseover)="dispatchPlanmenuTrigger.openMenu()"
+              style="margin-left: 10px;"
+            >
+              <a
+                class="nav-link"
+                #dispatchPlanmenuTrigger="matMenuTrigger"
+                [matMenuTriggerFor]="dispatchPlan"
+                ><mat-icon>launch</mat-icon></a
+              >
+              <mat-menu #dispatchPlan="matMenu">
+                <button mat-menu-item>
+                  View Plans
+                </button>
+                <button mat-menu-item>
+                  Modify Plans
+                </button>
+                <button mat-menu-item>
+                  Approve Plans
+                </button>
+              </mat-menu>
+            </li>
+            </ul>
+          </div>
+        </div>
+       
+      </mat-card>
+      <div class="body-content">
+        <mat-card>
+          <select name="select" id="option" style="margin-left: 90%;">
+            <option value="10">10</option>
+          </select>
+          <mat-icon style="margin-left: 10px; background-color: #d4cccc; border-radius: 20px;">keyboard_arrow_left
+          </mat-icon>
+          <mat-icon style="background-color: #d4cccc; border-radius: 20px; margin-left: 5px;">keyboard_arrow_right
+          </mat-icon>
+        </mat-card>
+    
+    
+      </div>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element"> <mat-icon>tune</mat-icon> </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Driver Name </th>
+         <td mat-cell *matCellDef="let element"><button style="background-color: blue; color: white;"> {{element.name}}</button> </td>
+        </ng-container>
+      
+        <!-- carrier Column -->
+        <ng-container matColumnDef="carrier">
+          <th mat-header-cell *matHeaderCellDef> carrier Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.carrier}} </td>
+        </ng-container>
+
+        <!-- age Column -->
+        <ng-container matColumnDef="age">
+            <th mat-header-cell *matHeaderCellDef> Age </th>
+            <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+          </ng-container>
+
+          <!-- mobile Column -->
+        <ng-container matColumnDef="mobile">
+            <th mat-header-cell *matHeaderCellDef> Mobile </th>
+            <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+          </ng-container>
+
+          <!-- experience Column -->
+        <ng-container matColumnDef="experience">
+            <th mat-header-cell *matHeaderCellDef> Experience </th>
+            <td mat-cell *matCellDef="let element"> {{element.experience}} </td>
+          </ng-container>
+
+          <!-- track Column -->
+        <ng-container matColumnDef="track">
+            <th mat-header-cell *matHeaderCellDef> Track Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.track}} </td>
+          </ng-container>
+      
+        <!-- allocate Column -->
+        <ng-container matColumnDef="allocate">
+          <th mat-header-cell *matHeaderCellDef> Allocate </th>
+          <td mat-cell *matCellDef="let element"><button style="background-color: #f1a944; color: white;">{{element.allocate}}</button>  </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)" >
+        </tr>
+      </table>
+</ng-container>
+
+<!--Driver Form-->
+<ng-container *ngIf="addDriver">
+    <mat-card style="display: flex;">
+        <img src="../../assets/images/info1.png" alt="info" style="width: 30px; background-color: #e1dada; border-radius: 40px; height: 30px;">
+        <h2 style="margin-left: 10px; color: #52bfeb;">Drivers</h2>
+      <span class="btn-top" style="margin-left: 75%; display: flex;">
+        <button style="background-color: #52bfeb; border-radius: 20px; border: none; width: 70px; height: 30px; color: white;">Reset</button>
+        <button style="background-color: #52bfeb; border-radius: 20px; border: none;  width: 70px; height: 30px; color: white; margin-left: 3px;" (click)="cancel()">Cancel</button>
+        <button style="background-color: #52bfeb; border-radius: 20px; border: none;  width: 70px; height: 30px; color: white; margin-left: 3px;">Save</button>
+      </span>
+    </mat-card>
+    <div style="background-color: #52bfeb; display: flex;">
+        <h1 style="color: white; margin-top: 10px;">Add Driver</h1>
+        <span><mat-icon style="margin-left: 1320px; color: white; margin-top: 10px;">keyboard_arrow_right</mat-icon></span>
+    </div>
+    <mat-card>
+        <div class="container">
+            <div class="inp-1" style="display: grid;">
+                <label>Name*</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>City</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Contact Number*</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1">
+                <form class="custom" style="display: grid;">
+                  <label>Company Code:</label>
+                  <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="INKN">
+                    <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                      <mat-button-toggle value="green" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">content_paste_search</mat-icon></mat-button-toggle>
+                      <mat-button-toggle value="green" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">description</mat-icon></mat-button-toggle>
+                      <mat-button-toggle value="red" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">search</mat-icon></mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </mat-form-field>
+                </form>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>PassWord*</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="password">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>confirm Password*</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="password">
+                </mat-form-field>
+              </div>
+              <div class="inp-1">
+                <form class="custom" style="display: grid;">
+                  <label>Branch Code:</label>
+                  <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="INKN">
+                    <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                      <mat-button-toggle value="green" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">content_paste_search</mat-icon></mat-button-toggle>
+                      <mat-button-toggle value="green" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">description</mat-icon></mat-button-toggle>
+                      <mat-button-toggle value="red" style="background-color: #efeef0;"><mat-icon style="margin-bottom: 15px;">search</mat-icon></mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </mat-form-field>
+                </form>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Track Type</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Mobile</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Tracking Vendor</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Sim/Gps Carrier</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>select</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Driving Licence Number*</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Driver Type</label>
+                <mat-form-field appearance="outline">
+                  <mat-label>Local Driver</mat-label>
+                  <mat-select>
+                    <mat-option>Option 1</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Age*</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+              <div class="inp-1" style="display: grid;">
+                <label>Driving since*</label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text">
+                </mat-form-field>
+              </div>
+        </div>
+    </mat-card>
+</ng-container>

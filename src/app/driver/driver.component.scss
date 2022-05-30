@@ -1,0 +1,43 @@
+table{
+    width: 100%;
+}
+
+.mat-row:nth-child(odd){
+    background-color: #edeffd;
+}
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+label{
+    color: #5f6489;
+    font-size: large;
+}
+mat-form-field{
+    width: 320px;
+    margin-bottom: 0px;
+    position: relative;
+
+}
+mat-button-toggle-group {
+    position: absolute;
+
+    border-radius: 5px;
+    right: -7px;
+    z-index: 2;
+    border: none;
+    top: -2px;
+    // bottom: 1px;
+    height: 38px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(182, 182, 182, 0.999);
+    transform: translateX(2px);
+}
+::ng-deep .custom{
+    .mat-form-field-outline{
+        background-color: #efeef0;
+    }  
+  }

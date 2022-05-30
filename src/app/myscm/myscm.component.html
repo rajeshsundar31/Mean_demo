@@ -1,0 +1,179 @@
+<div class="container-navbar">
+    <img src="../../assets/images/title.jpeg" alt="page">
+    <div class="dropdown">
+        <button class="dropdown-btn" >{{'Dashboard' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a routerLink="/Organization">{{'Org Details' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#" >{{'Users' | translate}}</a>
+        </div>
+        
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'General Admin' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Order Management' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Trip Management' | translate}}<mat-icon style="margin-top: 7px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Visibility' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <form class="custom">
+      <mat-form-field appearance="outline">
+        <mat-label>Select Language</mat-label>
+        <mat-select>
+          <mat-option value="en" (click)="langSelect('en')">English</mat-option>
+          <mat-option value="two" (click)="langSelect('ch')">Chinees</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    
+    <div class="user-icon">
+        <button class="dropdown-btn" style="margin-top: -2px;"><mat-icon>person_outline</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">Home</a>
+            <a href="#">Admin</a>
+            <a href="#">user</a>
+        </div>
+    </div>
+</div>
+<div class="container-btn">
+    <div class="add-btn">
+        <button><mat-icon>add</mat-icon></button>
+    </div>
+    <div class="add-btn">
+        <button (click)="search()"><mat-icon>search</mat-icon></button>
+        <button><mat-icon>format_align_left</mat-icon></button>
+    </div>
+    <div class="add-btn">
+        <button><mat-icon>cloud_upload</mat-icon></button>
+        <button><mat-icon>cloud_download</mat-icon></button>
+        <button><mat-icon>cached</mat-icon></button>
+    </div>
+
+    <div class="btn-add">
+      <ng-container *ngIf="searchbar">
+        <input matInput type="search" placeholder="Search your Keyword" (keyup)="SearchFilter($event)" #input>
+      </ng-container>
+    </div>
+</div>
+
+
+
+
+<ng-container  *ngIf="mapPage">
+  <div class="map-layout">
+  <div class="right-map">
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
+  <div class="card">
+      <div class="back">
+        <div class="info-box7-block">
+          <h5 class="m-b-15">Active Users</h5>
+          <h2 class="text-right"><mat-icon style="margin-left: 7px;">record_voice_over</mat-icon><span style="margin-left: 100px;">231</span></h2>
+          <p class="m-b-0">15% Less Then Last Month</p>
+        </div>
+      </div>
+      <div class="new">
+        <div class="info-box7-block">
+          <h5 class="m-b-15">New  Users</h5>
+          <h2 class="text-right"><mat-icon style="margin-left: 7px;">person_add</mat-icon><span style="margin-left: 100px;">231</span></h2>
+          <p class="m-b-0">10% Higher Then Last week</p>
+        </div>
+      </div>
+      <div class="exisist">
+        <div class="info-box7-block">
+          <h5 class="m-b-15">Existing Users</h5>
+          <h2 class="text-right"><mat-icon style="margin-left: 7px;">person_search</mat-icon><span style="margin-left: 100px;">231</span></h2>
+          <p class="m-b-0">18% Higher Then Last Month</p>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>User Name</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Offline</td>
+        <td>TestCustomer<br>
+          8212345498
+        </td>
+        <td>customer</td>
+      </tr>
+      <tr>
+        <td>Offline</td>
+        <td>Test Customer<br>
+          7823430488
+        </td>
+        <td>customer</td>
+      </tr>
+      <tr>
+        <td>offline</td>
+        <td>Banzai Ltd<br>
+          683983948
+        </td>
+        <td>customer</td>
+      </tr>
+    </tbody>
+  </table>
+  <table style="margin-left: 20px;">
+   
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Pickup Order</th>
+        <th>Deliverys</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>27-05-22</td>
+        <td>2</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>27-05-22</td>
+        <td>3</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>28-05-22</td>
+        <td>6</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</ng-container>

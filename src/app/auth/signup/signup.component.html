@@ -1,0 +1,53 @@
+<mat-grid-list cols="2" rowHeight="100vh">
+    <mat-grid-tile>
+        <img src="../../../assets/images/pexels-makjp-9633803.jpg" alt="etruckNow">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-stepper orientation="vertical" #stepper>
+            <mat-step >
+              <form >
+                <ng-template matStepLabel>Fill out your Details</ng-template>
+                    <mat-form-field appearance="fill">
+                        <mat-label>email</mat-label>
+                        <input matInput placeholder="Enter a Valid Maild Address" required>
+                      </mat-form-field>
+                      <mat-form-field appearance="fill">
+                          <mat-label>Name</mat-label>
+                          <input matInput placeholder="name" required>
+                        </mat-form-field>
+                
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <form>
+                <ng-template matStepLabel>Fill out your address</ng-template>
+                <mat-form-field appearance="fill">
+                    <mat-label>Organization</mat-label>
+                    <input matInput placeholder="organization" required>
+                  </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Address</mat-label>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY"
+                         required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <p>You are now done.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button>Reset</button>
+              </div>
+            </mat-step>
+          </mat-stepper>
+          
+    </mat-grid-tile>
+</mat-grid-list>

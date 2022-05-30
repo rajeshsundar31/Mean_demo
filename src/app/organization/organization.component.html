@@ -1,0 +1,159 @@
+<div class="container-navbar">
+    <img src="../../assets/images/title.jpeg" alt="page">
+    <div class="dropdown">
+        <button class="dropdown-btn" >{{'Dashboard' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a (click)="tableDataUser()">{{'Org Details' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+        </div>
+        
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'General Admin' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Users' | translate}}</a>
+            <a href="#">{{'Privilege'| translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Order Management' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'eBooking' | translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Trip Management' | translate}}<mat-icon style="margin-top: 7px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Visibility' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <form class="custom">
+      <mat-form-field appearance="outline">
+        <mat-label>Select Language</mat-label>
+        <mat-select>
+          <mat-option value="en" (click)="langSelect('en')">English</mat-option>
+          <mat-option value="two" (click)="langSelect('ch')">Chinees</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    
+    <div class="user-icon">
+        <button class="dropdown-btn" style="margin-top: -2px;"><mat-icon>person_outline</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">Home</a>
+            <a href="#">Admin</a>
+            <a href="#">user</a>
+        </div>
+    </div>
+</div>
+<div class="container-btn">
+    <div class="add-btn">
+        <button routerLink="/form"><mat-icon>add</mat-icon></button>
+    </div>
+    <div class="add-btn">
+        <button (click)="search()"><mat-icon>search</mat-icon></button>
+        <button><mat-icon>format_align_left</mat-icon></button>
+    </div>
+    <div class="add-btn">
+        <button><mat-icon>cloud_upload</mat-icon></button>
+        <button><mat-icon>cloud_download</mat-icon></button>
+        <button><mat-icon>cached</mat-icon></button>
+    </div>
+
+    <div class="btn-add">
+      <ng-container *ngIf="searchbar">
+        <input matInput type="search" placeholder="Search your Keyword" (keyup)="SearchFilter($event)" #input>
+      </ng-container>
+    </div>
+</div>
+
+<ng-container *ngIf="matTable">
+  <!--Table Data-->
+  <table mat-table [dataSource]="groups" class="mat-elevation-z8">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- customer Column -->
+    <ng-container matColumnDef="customer">
+      <th mat-header-cell *matHeaderCellDef> {{'Org ID' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+    </ng-container>
+
+    <!-- Org Column -->
+    <ng-container matColumnDef="org">
+      <th mat-header-cell *matHeaderCellDef>{{'Organization' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.organization}} </td>
+    </ng-container>
+  
+    <!-- description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> {{'Description' | translate}} </th>
+     <td mat-cell *matCellDef="let element">{{element.description}}</td>
+    </ng-container>
+    
+      <!-- insertdate Column -->
+    <ng-container matColumnDef="insertdate">
+        <th mat-header-cell *matHeaderCellDef> {{'Create Date' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.insert_date | date: 'M/d/yy'}} </td>
+      </ng-container>
+
+      <!-- user Column -->
+    <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef>{{'Create User' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.insert_user}} </td>
+      </ng-container>
+
+
+      <!-- updatedate Column -->
+    <ng-container matColumnDef="updatedate">
+        <th mat-header-cell *matHeaderCellDef> {{'UpdatedDate'| translate }} </th>
+        <td mat-cell *matCellDef="let element"> {{element.updated_date | date: 'M/d/yy' }} </td>
+      </ng-container>
+  
+    <!-- updateduser Column -->
+    <ng-container matColumnDef="updateduser">
+      <th mat-header-cell *matHeaderCellDef> {{'Update User' | translate}} </th>
+      <td mat-cell *matCellDef="let element">{{element.updated_user}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>{{'Delete User' | translate}} </th>
+      <td mat-cell *matCellDef="let element; let i=index" (click)="deleteTable(i)"><button mat-icon-button><mat-icon>delete</mat-icon></button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="update">
+      <th mat-header-cell *matHeaderCellDef>{{'Edit User' | translate}} </th>
+      <td mat-cell *matCellDef="let row; let i=index" (click)="$event.stopPropagation()" (click)="updateTable(row)"><button mat-icon-button><mat-icon>edit</mat-icon></button></td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+</ng-container>

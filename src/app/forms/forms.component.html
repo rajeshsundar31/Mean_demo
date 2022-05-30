@@ -1,0 +1,99 @@
+<div class="container-navbar">
+    <img src="../../assets/images/title.jpeg" alt="page">
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Dashboard' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+        
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'General Admin' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Order Management' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Trip Management' | translate}}<mat-icon style="margin-top: 7px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropdown-btn">{{'Visibility' | translate}}<mat-icon style="margin-top: 5px;">arrow_drop_down</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">{{'Home' | translate}}</a>
+            <a href="#">{{'Admin' | translate}}</a>
+            <a href="#">{{'Users' | translate}}</a>
+        </div>
+    </div>
+    <form class="custom">
+      <mat-form-field appearance="outline" class="lang">
+        <mat-label>Select Language</mat-label>
+        <mat-select>
+          <mat-option value="en" (click)="langSelect('en')">English</mat-option>
+          <mat-option value="two" (click)="langSelect('ch')">Chinees</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    
+    <div class="user-icon">
+        <button class="dropdown-btn" style="margin-top: -2px;"><mat-icon>person_outline</mat-icon></button>
+        <div class="dropdown-content">
+            <a href="#">Home</a>
+            <a href="#">Admin</a>
+            <a href="#">user</a>
+        </div>
+    </div>
+</div>
+<div class="container-btn">
+    <div class="add-btn">
+        <button routerLink="/form"><mat-icon>add</mat-icon></button>
+    </div>
+    <div class="add-btn">
+        <button><mat-icon>search</mat-icon></button>
+        <button><mat-icon>format_align_left</mat-icon></button>
+    </div>
+    <div class="add-btn">
+        <button><mat-icon>cloud_upload</mat-icon></button>
+        <button><mat-icon>cloud_download</mat-icon></button>
+        <button><mat-icon>cached</mat-icon></button>
+    </div>
+</div>
+
+<mat-card>
+    <h1>User Form</h1>
+    <form class="form" [formGroup]="TableForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Organization ID</mat-label>
+            <input matInput type="text" disabled="true" style="cursor: no-drop;">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Organization</mat-label>
+            <input matInput type="text" formControlName="organization">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput type="text" formControlName="description">
+        </mat-form-field>
+    </form>
+    <div class="btn">
+        <button mat-raised-button color="primary" style="margin-left: 1150px" (click)="postData()" routerLink="/Organization">Submit</button>
+        <button mat-raised-button style="margin-left: 20px;" routerLink="/Organization">cancel</button>
+    </div>
+    
+</mat-card>
